@@ -55,14 +55,36 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 	    }
 	
 	public void check(){
-		if(isaBoolean()){
-			if(isBooleanY()){endGame();}
-			if(isaBooleanA()){
-                if(isaBooleanYa()){endGame();}
+	   	final String gameOver = "GAME OVER";
+		if(a1||a2||a3||a4||a5){
+			if(ya1>460||ya2>460||ya3>460||ya4>460||ya5>460){
+				start.setEnabled(false);
+				reset.setEnabled(false);
+				shoot.stop();
+				alienright.stop();
+				alienleft.stop();
+				JOptionPane.showMessageDialog(null, gameOver);
 			}
-            if(isaBooleana11ToA15()){
-                if(isaBooleanya11ToYa15()){endGame();}
-            }
+			if(a6||a7||a8||a9||a10){
+				if(ya6>460||ya7>460||ya8>460||ya9>460||ya10>460){
+					start.setEnabled(false);
+					reset.setEnabled(false);
+					shoot.stop();
+					alienright.stop();
+					alienleft.stop();
+					JOptionPane.showMessageDialog(null, gameOver);
+				}
+			}
+				if(a11==true||a12==true||a13==true||a14==true||a15==true){
+					if(ya11>460||ya12>460||ya13>460||ya14>460||ya15>460){
+						start.setEnabled(false);
+						reset.setEnabled(false);
+						shoot.stop();
+						alienright.stop();
+						alienleft.stop();
+						JOptionPane.showMessageDialog(null, gameOver);
+					}
+				}
 		}
 	}
 
@@ -206,24 +228,8 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa1+10, ya1, 60, 40);
 			}
-			
-			g.setColor(Color.WHITE);
-			g.fillRect(xa1, ya1, 5, 5);
-			g.fillRect(xa1 + 5, ya1 + 5, 5, 5);
-			g.fillRect(xa1, ya1 + 10, 35, 5);
-			g.fillRect(xa1 + 30, ya1, 5, 5);
-			g.fillRect(xa1 + 25, ya1 + 5, 5, 5);
-			g.fillRect(xa1 - 5, ya1 + 15, 10, 5);
-			g.fillRect(xa1 + 10, ya1 + 15, 15, 5);
-			g.fillRect(xa1 + 30, ya1 + 15, 10, 5);
-			g.fillRect(xa1 - 10, ya1 + 20, 55, 5);
-			g.fillRect(xa1 - 10, ya1 + 25, 5, 10);
-			g.fillRect(xa1 + 40, ya1 + 25, 5, 10);
-			g.fillRect(xa1, ya1 + 25, 35, 5);
-			g.fillRect(xa1, ya1 + 30, 5, 5);
-			g.fillRect(xa1 + 30, ya1 + 30, 5, 5);
-			g.fillRect(xa1 + 5, ya1 + 35, 10, 5);
-			g.fillRect(xa1 + 20, ya1 + 35, 10, 5);
+
+			drawObject(g, xa1, ya1, xa1 + 5, ya1 + 5, ya1 + 10, xa1 + 30, xa1 + 25, xa1 - 5, ya1 + 15, xa1 + 10, xa1 - 10, ya1 + 20, ya1 + 25, xa1 + 40, ya1 + 30, ya1 + 35, xa1 + 20);
 			
 		}
 		if(a2==true){
@@ -234,23 +240,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa2+10, ya2, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa2, ya2, 5, 5);
-			g.fillRect(xa2 + 5, ya2 + 5, 5, 5);
-			g.fillRect(xa2, ya2 + 10, 35, 5);
-			g.fillRect(xa2 + 30, ya2, 5, 5);
-			g.fillRect(xa2 + 25, ya2 + 5, 5, 5);
-			g.fillRect(xa2 - 5, ya2 + 15, 10, 5);
-			g.fillRect(xa2 + 10, ya2 + 15, 15, 5);
-			g.fillRect(xa2 + 30, ya2 + 15, 10, 5);
-			g.fillRect(xa2 - 10, ya2 + 20, 55, 5);
-			g.fillRect(xa2 - 10, ya2 + 25, 5, 10);
-			g.fillRect(xa2 + 40, ya2 + 25, 5, 10);
-			g.fillRect(xa2, ya2 + 25, 35, 5);
-			g.fillRect(xa2, ya2 + 30, 5, 5);
-			g.fillRect(xa2 + 30, ya2 + 30, 5, 5);
-			g.fillRect(xa2 + 5, ya2 + 35, 10, 5);
-			g.fillRect(xa2 + 20, ya2 + 35, 10, 5);
+			drawObject(g, xa2, ya2, xa2 + 5, ya2 + 5, ya2 + 10, xa2 + 30, xa2 + 25, xa2 - 5, ya2 + 15, xa2 + 10, xa2 - 10, ya2 + 20, ya2 + 25, xa2 + 40, ya2 + 30, ya2 + 35, xa2 + 20);
 		}
 		if(a3==true){
 			if(links==true){
@@ -260,23 +250,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa3+10, ya3, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa3, ya3, 5, 5);
-			g.fillRect(xa3 + 5, ya3 + 5, 5, 5);
-			g.fillRect(xa3, ya3 + 10, 35, 5);
-			g.fillRect(xa3 + 30, ya3, 5, 5);
-			g.fillRect(xa3 + 25, ya3 + 5, 5, 5);
-			g.fillRect(xa3 - 5, ya3 + 15, 10, 5);
-			g.fillRect(xa3 + 10, ya3 + 15, 15, 5);
-			g.fillRect(xa3 + 30, ya3 + 15, 10, 5);
-			g.fillRect(xa3 - 10, ya3 + 20, 55, 5);
-			g.fillRect(xa3 - 10, ya3 + 25, 5, 10);
-			g.fillRect(xa3 + 40, ya3 + 25, 5, 10);
-			g.fillRect(xa3, ya3 + 25, 35, 5);
-			g.fillRect(xa3, ya3 + 30, 5, 5);
-			g.fillRect(xa3 + 30, ya3 + 30, 5, 5);
-			g.fillRect(xa3 + 5, ya3 + 35, 10, 5);
-			g.fillRect(xa3 + 20, ya3 + 35, 10, 5);
+			drawObject(g, xa3, ya3, xa3 + 5, ya3 + 5, ya3 + 10, xa3 + 30, xa3 + 25, xa3 - 5, ya3 + 15, xa3 + 10, xa3 - 10, ya3 + 20, ya3 + 25, xa3 + 40, ya3 + 30, ya3 + 35, xa3 + 20);
 		}
 		if(a4==true){
 			if(links==true){
@@ -286,23 +260,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa4+10, ya4, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa4, ya4, 5, 5);
-			g.fillRect(xa4 + 5, ya4 + 5, 5, 5);
-			g.fillRect(xa4, ya4 + 10, 35, 5);
-			g.fillRect(xa4 + 30, ya4, 5, 5);
-			g.fillRect(xa4 + 25, ya4 + 5, 5, 5);
-			g.fillRect(xa4 - 5, ya4 + 15, 10, 5);
-			g.fillRect(xa4 + 10, ya4 + 15, 15, 5);
-			g.fillRect(xa4 + 30, ya4 + 15, 10, 5);
-			g.fillRect(xa4 - 10, ya4 + 20, 55, 5);
-			g.fillRect(xa4 - 10, ya4 + 25, 5, 10);
-			g.fillRect(xa4 + 40, ya4 + 25, 5, 10);
-			g.fillRect(xa4, ya4 + 25, 35, 5);
-			g.fillRect(xa4, ya4 + 30, 5, 5);
-			g.fillRect(xa4 + 30, ya4 + 30, 5, 5);
-			g.fillRect(xa4 + 5, ya4 + 35, 10, 5);
-			g.fillRect(xa4 + 20, ya4 + 35, 10, 5);
+			drawObject(g, xa4, ya4, xa4 + 5, ya4 + 5, ya4 + 10, xa4 + 30, xa4 + 25, xa4 - 5, ya4 + 15, xa4 + 10, xa4 - 10, ya4 + 20, ya4 + 25, xa4 + 40, ya4 + 30, ya4 + 35, xa4 + 20);
 		}
 		if(a5==true){
 			if(links==true){
@@ -312,23 +270,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa5+10, ya5, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa5, ya5, 5, 5);
-			g.fillRect(xa5 + 5, ya5 + 5, 5, 5);
-			g.fillRect(xa5, ya5 + 10, 35, 5);
-			g.fillRect(xa5 + 30, ya5, 5, 5);
-			g.fillRect(xa5 + 25, ya5 + 5, 5, 5);
-			g.fillRect(xa5 - 5, ya5 + 15, 10, 5);
-			g.fillRect(xa5 + 10, ya5 + 15, 15, 5);
-			g.fillRect(xa5 + 30, ya5 + 15, 10, 5);
-			g.fillRect(xa5 - 10, ya5 + 20, 55, 5);
-			g.fillRect(xa5 - 10, ya5 + 25, 5, 10);
-			g.fillRect(xa5 + 40, ya5 + 25, 5, 10);
-			g.fillRect(xa5, ya5 + 25, 35, 5);
-			g.fillRect(xa5, ya5 + 30, 5, 5);
-			g.fillRect(xa5 + 30, ya5 + 30, 5, 5);
-			g.fillRect(xa5 + 5, ya5 + 35, 10, 5);
-			g.fillRect(xa5 + 20, ya5 + 35, 10, 5);
+			drawObject(g, xa5, ya5, xa5 + 5, ya5 + 5, ya5 + 10, xa5 + 30, xa5 + 25, xa5 - 5, ya5 + 15, xa5 + 10, xa5 - 10, ya5 + 20, ya5 + 25, xa5 + 40, ya5 + 30, ya5 + 35, xa5 + 20);
 		}
 		if(a6==true){
 			if(links==true){
@@ -338,23 +280,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa6+10, ya6, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa6, ya6, 5, 5);
-			g.fillRect(xa6 + 5, ya6 + 5, 5, 5);
-			g.fillRect(xa6, ya6 + 10, 35, 5);
-			g.fillRect(xa6 + 30, ya6, 5, 5);
-			g.fillRect(xa6 + 25, ya6 + 5, 5, 5);
-			g.fillRect(xa6 - 5, ya6 + 15, 10, 5);
-			g.fillRect(xa6 + 10, ya6 + 15, 15, 5);
-			g.fillRect(xa6 + 30, ya6 + 15, 10, 5);
-			g.fillRect(xa6 - 10, ya6 + 20, 55, 5);
-			g.fillRect(xa6 - 10, ya6 + 25, 5, 10);
-			g.fillRect(xa6 + 40, ya6 + 25, 5, 10);
-			g.fillRect(xa6, ya6 + 25, 35, 5);
-			g.fillRect(xa6, ya6 + 30, 5, 5);
-			g.fillRect(xa6 + 30, ya6 + 30, 5, 5);
-			g.fillRect(xa6 + 5, ya6 + 35, 10, 5);
-			g.fillRect(xa6 + 20, ya6 + 35, 10, 5);
+			drawObject(g, xa6, ya6, xa6 + 5, ya6 + 5, ya6 + 10, xa6 + 30, xa6 + 25, xa6 - 5, ya6 + 15, xa6 + 10, xa6 - 10, ya6 + 20, ya6 + 25, xa6 + 40, ya6 + 30, ya6 + 35, xa6 + 20);
 		}
 		if(a7==true){
 			if(links==true){
@@ -364,23 +290,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa7+10, ya7, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa7, ya7, 5, 5);
-			g.fillRect(xa7 + 5, ya7 + 5, 5, 5);
-			g.fillRect(xa7, ya7 + 10, 35, 5);
-			g.fillRect(xa7 + 30, ya7, 5, 5);
-			g.fillRect(xa7 + 25, ya7 + 5, 5, 5);
-			g.fillRect(xa7 - 5, ya7 + 15, 10, 5);
-			g.fillRect(xa7 + 10, ya7 + 15, 15, 5);
-			g.fillRect(xa7 + 30, ya7 + 15, 10, 5);
-			g.fillRect(xa7 - 10, ya7 + 20, 55, 5);
-			g.fillRect(xa7 - 10, ya7 + 25, 5, 10);
-			g.fillRect(xa7 + 40, ya7 + 25, 5, 10);
-			g.fillRect(xa7, ya7 + 25, 35, 5);
-			g.fillRect(xa7, ya7 + 30, 5, 5);
-			g.fillRect(xa7 + 30, ya7 + 30, 5, 5);
-			g.fillRect(xa7 + 5, ya7 + 35, 10, 5);
-			g.fillRect(xa7 + 20, ya7 + 35, 10, 5);
+			drawObject(g, xa7, ya7, xa7 + 5, ya7 + 5, ya7 + 10, xa7 + 30, xa7 + 25, xa7 - 5, ya7 + 15, xa7 + 10, xa7 - 10, ya7 + 20, ya7 + 25, xa7 + 40, ya7 + 30, ya7 + 35, xa7 + 20);
 		}
 		if(a8==true){
 			if(links==true){
@@ -390,23 +300,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa8+10, ya8, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa8, ya8, 5, 5);
-			g.fillRect(xa8 + 5, ya8 + 5, 5, 5);
-			g.fillRect(xa8, ya8 + 10, 35, 5);
-			g.fillRect(xa8 + 30, ya8, 5, 5);
-			g.fillRect(xa8 + 25, ya8 + 5, 5, 5);
-			g.fillRect(xa8 - 5, ya8 + 15, 10, 5);
-			g.fillRect(xa8 + 10, ya8 + 15, 15, 5);
-			g.fillRect(xa8 + 30, ya8 + 15, 10, 5);
-			g.fillRect(xa8 - 10, ya8 + 20, 55, 5);
-			g.fillRect(xa8 - 10, ya8 + 25, 5, 10);
-			g.fillRect(xa8 + 40, ya8 + 25, 5, 10);
-			g.fillRect(xa8, ya8 + 25, 35, 5);
-			g.fillRect(xa8, ya8 + 30, 5, 5);
-			g.fillRect(xa8 + 30, ya8 + 30, 5, 5);
-			g.fillRect(xa8 + 5, ya8 + 35, 10, 5);
-			g.fillRect(xa8 + 20, ya8 + 35, 10, 5);
+			drawObject(g, xa8, ya8, xa8 + 5, ya8 + 5, ya8 + 10, xa8 + 30, xa8 + 25, xa8 - 5, ya8 + 15, xa8 + 10, xa8 - 10, ya8 + 20, ya8 + 25, xa8 + 40, ya8 + 30, ya8 + 35, xa8 + 20);
 		}
 		if(a9==true){
 			if(links==true){
@@ -416,23 +310,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa9+10, ya9, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa9, ya9, 5, 5);
-			g.fillRect(xa9 + 5, ya9 + 5, 5, 5);
-			g.fillRect(xa9, ya9 + 10, 35, 5);
-			g.fillRect(xa9 + 30, ya9, 5, 5);
-			g.fillRect(xa9 + 25, ya9 + 5, 5, 5);
-			g.fillRect(xa9 - 5, ya9 + 15, 10, 5);
-			g.fillRect(xa9 + 10, ya9 + 15, 15, 5);
-			g.fillRect(xa9 + 30, ya9 + 15, 10, 5);
-			g.fillRect(xa9 - 10, ya9 + 20, 55, 5);
-			g.fillRect(xa9 - 10, ya9 + 25, 5, 10);
-			g.fillRect(xa9 + 40, ya9 + 25, 5, 10);
-			g.fillRect(xa9, ya9 + 25, 35, 5);
-			g.fillRect(xa9, ya9 + 30, 5, 5);
-			g.fillRect(xa9 + 30, ya9 + 30, 5, 5);
-			g.fillRect(xa9 + 5, ya9 + 35, 10, 5);
-			g.fillRect(xa9 + 20, ya9 + 35, 10, 5);
+			drawObject(g, xa9, ya9, xa9 + 5, ya9 + 5, ya9 + 10, xa9 + 30, xa9 + 25, xa9 - 5, ya9 + 15, xa9 + 10, xa9 - 10, ya9 + 20, ya9 + 25, xa9 + 40, ya9 + 30, ya9 + 35, xa9 + 20);
 		}
 		if(a10==true){
 			if(links==true){
@@ -442,23 +320,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa10+10, ya10, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa10, ya10, 5, 5);
-			g.fillRect(xa10 + 5, ya10 + 5, 5, 5);
-			g.fillRect(xa10, ya10 + 10, 35, 5);
-			g.fillRect(xa10 + 30, ya10, 5, 5);
-			g.fillRect(xa10 + 25, ya10 + 5, 5, 5);
-			g.fillRect(xa10 - 5, ya10 + 15, 10, 5);
-			g.fillRect(xa10 + 10, ya10 + 15, 15, 5);
-			g.fillRect(xa10 + 30, ya10 + 15, 10, 5);
-			g.fillRect(xa10 - 10, ya10 + 20, 55, 5);
-			g.fillRect(xa10 - 10, ya10 + 25, 5, 10);
-			g.fillRect(xa10 + 40, ya10 + 25, 5, 10);
-			g.fillRect(xa10, ya10 + 25, 35, 5);
-			g.fillRect(xa10, ya10 + 30, 5, 5);
-			g.fillRect(xa10 + 30, ya10 + 30, 5, 5);
-			g.fillRect(xa10 + 5, ya10 + 35, 10, 5);
-			g.fillRect(xa10 + 20, ya10 + 35, 10, 5);
+			drawObject(g, xa10, ya10, xa10 + 5, ya10 + 5, ya10 + 10, xa10 + 30, xa10 + 25, xa10 - 5, ya10 + 15, xa10 + 10, xa10 - 10, ya10 + 20, ya10 + 25, xa10 + 40, ya10 + 30, ya10 + 35, xa10 + 20);
 		}
 		if (a11 == true) {
 
@@ -469,23 +331,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa11+10, ya11, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa11, ya11, 5, 5);
-			g.fillRect(xa11 + 5, ya11 + 5, 5, 5);
-			g.fillRect(xa11, ya11 + 10, 35, 5);
-			g.fillRect(xa11 + 30, ya11, 5, 5);
-			g.fillRect(xa11 + 25, ya11 + 5, 5, 5);
-			g.fillRect(xa11 - 5, ya11 + 15, 10, 5);
-			g.fillRect(xa11 + 10, ya11 + 15, 15, 5);
-			g.fillRect(xa11 + 30, ya11 + 15, 10, 5);
-			g.fillRect(xa11 - 10, ya11 + 20, 55, 5);
-			g.fillRect(xa11 - 10, ya11 + 25, 5, 10);
-			g.fillRect(xa11 + 40, ya11 + 25, 5, 10);
-			g.fillRect(xa11, ya11 + 25, 35, 5);
-			g.fillRect(xa11, ya11 + 30, 5, 5);
-			g.fillRect(xa11 + 30, ya11 + 30, 5, 5);
-			g.fillRect(xa11 + 5, ya11 + 35, 10, 5);
-			g.fillRect(xa11 + 20, ya11 + 35, 10, 5);
+			drawObject(g, xa11, ya11, xa11 + 5, ya11 + 5, ya11 + 10, xa11 + 30, xa11 + 25, xa11 - 5, ya11 + 15, xa11 + 10, xa11 - 10, ya11 + 20, ya11 + 25, xa11 + 40, ya11 + 30, ya11 + 35, xa11 + 20);
 		}
 		if(a12==true){
 			if(links==true){
@@ -495,23 +341,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa12+10, ya12, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa12, ya12, 5, 5);
-			g.fillRect(xa12 + 5, ya12 + 5, 5, 5);
-			g.fillRect(xa12, ya12 + 10, 35, 5);
-			g.fillRect(xa12 + 30, ya12, 5, 5);
-			g.fillRect(xa12 + 25, ya12 + 5, 5, 5);
-			g.fillRect(xa12 - 5, ya12 + 15, 10, 5);
-			g.fillRect(xa12 + 10, ya12 + 15, 15, 5);
-			g.fillRect(xa12 + 30, ya12 + 15, 10, 5);
-			g.fillRect(xa12 - 10, ya12 + 20, 55, 5);
-			g.fillRect(xa12 - 10, ya12 + 25, 5, 10);
-			g.fillRect(xa12 + 40, ya12 + 25, 5, 10);
-			g.fillRect(xa12, ya12 + 25, 35, 5);
-			g.fillRect(xa12, ya12 + 30, 5, 5);
-			g.fillRect(xa12 + 30, ya12 + 30, 5, 5);
-			g.fillRect(xa12 + 5, ya12 + 35, 10, 5);
-			g.fillRect(xa12 + 20, ya12 + 35, 10, 5);
+			drawObject(g, xa12, ya12, xa12 + 5, ya12 + 5, ya12 + 10, xa12 + 30, xa12 + 25, xa12 - 5, ya12 + 15, xa12 + 10, xa12 - 10, ya12 + 20, ya12 + 25, xa12 + 40, ya12 + 30, ya12 + 35, xa12 + 20);
 		}
 		if(a13==true){
 			if(links==true){
@@ -521,23 +351,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa13+10, ya13, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa13, ya13, 5, 5);
-			g.fillRect(xa13 + 5, ya13 + 5, 5, 5);
-			g.fillRect(xa13, ya13 + 10, 35, 5);
-			g.fillRect(xa13 + 30, ya13, 5, 5);
-			g.fillRect(xa13 + 25, ya13 + 5, 5, 5);
-			g.fillRect(xa13 - 5, ya13 + 15, 10, 5);
-			g.fillRect(xa13 + 10, ya13 + 15, 15, 5);
-			g.fillRect(xa13 + 30, ya13 + 15, 10, 5);
-			g.fillRect(xa13 - 10, ya13 + 20, 55, 5);
-			g.fillRect(xa13 - 10, ya13 + 25, 5, 10);
-			g.fillRect(xa13 + 40, ya13 + 25, 5, 10);
-			g.fillRect(xa13, ya13 + 25, 35, 5);
-			g.fillRect(xa13, ya13 + 30, 5, 5);
-			g.fillRect(xa13 + 30, ya13 + 30, 5, 5);
-			g.fillRect(xa13 + 5, ya13 + 35, 10, 5);
-			g.fillRect(xa13 + 20, ya13 + 35, 10, 5);
+			drawObject(g, xa13, ya13, xa13 + 5, ya13 + 5, ya13 + 10, xa13 + 30, xa13 + 25, xa13 - 5, ya13 + 15, xa13 + 10, xa13 - 10, ya13 + 20, ya13 + 25, xa13 + 40, ya13 + 30, ya13 + 35, xa13 + 20);
 		}
 		if(a14==true){
 			if(links==true){
@@ -547,23 +361,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa14+10, ya14, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa14, ya14, 5, 5);
-			g.fillRect(xa14 + 5, ya14 + 5, 5, 5);
-			g.fillRect(xa14, ya14 + 10, 35, 5);
-			g.fillRect(xa14 + 30, ya14, 5, 5);
-			g.fillRect(xa14 + 25, ya14 + 5, 5, 5);
-			g.fillRect(xa14 - 5, ya14 + 15, 10, 5);
-			g.fillRect(xa14 + 10, ya14 + 15, 15, 5);
-			g.fillRect(xa14 + 30, ya14 + 15, 10, 5);
-			g.fillRect(xa14 - 10, ya14 + 20, 55, 5);
-			g.fillRect(xa14 - 10, ya14 + 25, 5, 10);
-			g.fillRect(xa14 + 40, ya14 + 25, 5, 10);
-			g.fillRect(xa14, ya14 + 25, 35, 5);
-			g.fillRect(xa14, ya14 + 30, 5, 5);
-			g.fillRect(xa14 + 30, ya14 + 30, 5, 5);
-			g.fillRect(xa14 + 5, ya14 + 35, 10, 5);
-			g.fillRect(xa14 + 20, ya14 + 35, 10, 5);
+			drawObject(g, xa14, ya14, xa14 + 5, ya14 + 5, ya14 + 10, xa14 + 30, xa14 + 25, xa14 - 5, ya14 + 15, xa14 + 10, xa14 - 10, ya14 + 20, ya14 + 25, xa14 + 40, ya14 + 30, ya14 + 35, xa14 + 20);
 		}
 		if(a15==true){
 			if(links==true){
@@ -573,28 +371,60 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				g.setColor(Color.BLACK);
 				g.fillRect(xa15+10, ya15, 60, 40);
 			}
-			g.setColor(Color.WHITE);
-			g.fillRect(xa15, ya15, 5, 5);
-			g.fillRect(xa15 + 5, ya15 + 5, 5, 5);
-			g.fillRect(xa15, ya15 + 10, 35, 5);
-			g.fillRect(xa15 + 30, ya15, 5, 5);
-			g.fillRect(xa15 + 25, ya15 + 5, 5, 5);
-			g.fillRect(xa15 - 5, ya15 + 15, 10, 5);
-			g.fillRect(xa15 + 10, ya15 + 15, 15, 5);
-			g.fillRect(xa15 + 30, ya15 + 15, 10, 5);
-			g.fillRect(xa15 - 10, ya15 + 20, 55, 5);
-			g.fillRect(xa15 - 10, ya15 + 25, 5, 10);
-			g.fillRect(xa15 + 40, ya15 + 25, 5, 10);
-			g.fillRect(xa15, ya15 + 25, 35, 5);
-			g.fillRect(xa15, ya15 + 30, 5, 5);
-			g.fillRect(xa15 + 30, ya15 + 30, 5, 5);
-			g.fillRect(xa15 + 5, ya15 + 35, 10, 5);
-			g.fillRect(xa15 + 20, ya15 + 35, 10, 5);
+			drawObject(g, xa15, ya15, xa15 + 5, ya15 + 5, ya15 + 10, xa15 + 30, xa15 + 25, xa15 - 5, ya15 + 15, xa15 + 10, xa15 - 10, ya15 + 20, ya15 + 25, xa15 + 40, ya15 + 30, ya15 + 35, xa15 + 20);
 		}
 	}
 
+	private void drawObject(Graphics g, int xa1, int ya1, int x, int y, int y2, int x2, int x3, int x4, int y3, int x5, int x6, int y4, int y5, int x7, int y6, int y7, int x8)
+	{
+		g.setColor(Color.WHITE);
+		g.fillRect(xa1, ya1, 5, 5);
+		g.fillRect(x, y, 5, 5);
+		g.fillRect(xa1, y2, 35, 5);
+		g.fillRect(x2, ya1, 5, 5);
+		g.fillRect(x3, y, 5, 5);
+		g.fillRect(x4, y3, 10, 5);
+		g.fillRect(x5, y3, 15, 5);
+		g.fillRect(x2, y3, 10, 5);
+		g.fillRect(x6, y4, 55, 5);
+		g.fillRect(x6, y5, 5, 10);
+		g.fillRect(x7, y5, 5, 10);
+		g.fillRect(xa1, y5, 35, 5);
+		g.fillRect(xa1, y6, 5, 5);
+		g.fillRect(x2, y6, 5, 5);
+		g.fillRect(x, y7, 10, 5);
+		g.fillRect(x8, y7, 10, 5);
+	}
+
+	public static boolean anyTrue(boolean[] values){
+		boolean check = false;
+		for (int i = 0; i < values.length; i++){
+			if (values[i]){
+				check = true;
+				break;
+			}
+		}
+		return check;
+	}
+
 	public void drawBullet(){
-		if(a1||a2||a3||a4||a5||a6||a7||a8||a9||a10||a11||a12||a13||a14||a15){
+		boolean[] values = new boolean[15];
+		Arrays.fill(values, a1);
+		Arrays.fill(values, a2);
+		Arrays.fill(values, a3);
+		Arrays.fill(values, a4);
+		Arrays.fill(values, a5);
+		Arrays.fill(values, a6);
+		Arrays.fill(values, a7);
+		Arrays.fill(values, a8);
+		Arrays.fill(values, a9);
+		Arrays.fill(values, a10);
+		Arrays.fill(values, a11);
+		Arrays.fill(values, a12);
+		Arrays.fill(values, a13);
+		Arrays.fill(values, a14);
+		Arrays.fill(values, a15);
+		if(anyTrue(values)){
 			if (ball >= xa1 -10&& ball < xa1 + 55 && ycorb == ya1 + 40
 					&& a1 == true) {
 				Graphics g = bg.getGraphics();
