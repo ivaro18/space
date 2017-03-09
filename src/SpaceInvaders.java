@@ -1,11 +1,11 @@
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.net.URL;
-import java.util.*;
-import javax.swing.Timer;
 import javax.swing.*;
 
 public class SpaceInvaders extends JFrame implements ActionListener, KeyListener {
@@ -87,8 +87,41 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 				}
 		}
 	}
-	
-	public void actionPerformed(ActionEvent e){
+
+	private boolean isaBooleanya11ToYa15() {
+		return ya11>460||ya12>460||ya13>460||ya14>460||ya15>460;
+	}
+
+	private boolean isaBooleana11ToA15() {
+		return a11||a12||a13||a14||a15;
+	}
+
+	private boolean isaBooleanYa() {
+		return ya6>460||ya7>460||ya8>460||ya9>460||ya10>460;
+	}
+
+	private boolean isaBooleanA() {
+		return a6||a7||a8||a9||a10;
+	}
+
+	private boolean isBooleanY() {
+		return ya1>460||ya2>460||ya3>460||ya4>460||ya5>460;
+	}
+
+	private boolean isaBoolean() {
+		return a1||a2||a3||a4||a5;
+	}
+
+	private void endGame() {
+        start.setEnabled(false);
+        reset.setEnabled(false);
+        shoot.stop();
+        alienright.stop();
+        alienleft.stop();
+        JOptionPane.showMessageDialog(null, "GAME OVER");
+    }
+
+    public void actionPerformed(ActionEvent e){
 		if(e.getSource()==shoot){
 			drawBullet();
 		}
@@ -125,12 +158,11 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 			telr++;
 			if(telr==12){
 			alienright.stop();
-			ya1+=30;
-			ya2+=30;ya3+=30;ya4+=30;ya5+=30;ya6+=30;ya7+=30;ya8+=30;ya9+=30;ya10+=30;ya11+=30;ya12+=30;ya13+=30;ya14+=30;ya15+=30;
-			telr-=12;
-			alienleft.start();
-			links=false;
-			g.fillRect(xa1-25, ya1-30, 400, 200);
+                addToYAxis();
+                telr-=12;
+                alienleft.start();
+                links=false;
+                g.fillRect(xa1-25, ya1-30, 400, 200);
 			}
 			check();
 		}
@@ -142,8 +174,7 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 			tell++;
 			if(tell==12){
 				alienleft.stop();
-				ya1+=30;
-				ya2+=30; ya3+=30;ya4+=30;ya5+=30;ya6+=30;ya7+=30;ya8+=30;ya9+=30;ya10+=30;ya11+=30;ya12+=30;ya13+=30;ya14+=30;ya15+=30;
+                addToYAxis();
 				tell-=12;
 				links=true;
 				alienright.start();
@@ -152,8 +183,26 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 			check();
 		}
 	}
-	
-	public void drawCannon() {
+
+    private void addToYAxis() {
+        ya1+=30;
+        ya2+=30;
+        ya3+=30;
+        ya4+=30;
+        ya5+=30;
+        ya6+=30;
+        ya7+=30;
+        ya8+=30;
+        ya9+=30;
+        ya10+=30;
+        ya11+=30;
+        ya12+=30;
+        ya13+=30;
+        ya14+=30;
+        ya15+=30;
+    }
+
+    public void drawCannon() {
 		Graphics g = bg.getGraphics();
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 540, 580, 45);
