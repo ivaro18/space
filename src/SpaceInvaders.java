@@ -55,18 +55,42 @@ public class SpaceInvaders extends JFrame implements ActionListener, KeyListener
 	    }
 	
 	public void check(){
-		if(a1||a2||a3||a4||a5){
-			if(ya1>460||ya2>460||ya3>460||ya4>460||ya5>460){endGame();}
-			if(a6||a7||a8||a9||a10){
-                if(ya6>460||ya7>460||ya8>460||ya9>460||ya10>460){endGame();}
+		if(isaBoolean()){
+			if(isBooleanY()){endGame();}
+			if(isaBooleanA()){
+                if(isaBooleanYa()){endGame();}
 			}
-            if(a11==true||a12==true||a13==true||a14==true||a15==true){
-                if(ya11>460||ya12>460||ya13>460||ya14>460||ya15>460){endGame();}
+            if(isaBooleana11ToA15()){
+                if(isaBooleanya11ToYa15()){endGame();}
             }
 		}
 	}
 
-    private void endGame() {
+	private boolean isaBooleanya11ToYa15() {
+		return ya11>460||ya12>460||ya13>460||ya14>460||ya15>460;
+	}
+
+	private boolean isaBooleana11ToA15() {
+		return a11||a12||a13||a14||a15;
+	}
+
+	private boolean isaBooleanYa() {
+		return ya6>460||ya7>460||ya8>460||ya9>460||ya10>460;
+	}
+
+	private boolean isaBooleanA() {
+		return a6||a7||a8||a9||a10;
+	}
+
+	private boolean isBooleanY() {
+		return ya1>460||ya2>460||ya3>460||ya4>460||ya5>460;
+	}
+
+	private boolean isaBoolean() {
+		return a1||a2||a3||a4||a5;
+	}
+
+	private void endGame() {
         start.setEnabled(false);
         reset.setEnabled(false);
         shoot.stop();
